@@ -27,8 +27,7 @@ const dtsbrokers = async (req, res) => {
             message: "success"
         })
     } catch (e) {
-        console.log(e)
-        return res.status(500).send({message: "Server error"})
+        return res.status(500).send({message: e.message})
     }
 }
 
