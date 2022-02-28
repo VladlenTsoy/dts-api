@@ -8,7 +8,6 @@ const dtsbrokers = async (req, res) => {
             host: "smtp.gmail.com",
             port: 465,
             secure: true,
-            requireTLS: true,
             auth: {
                 user: email,
                 pass: "99897Vladlen7816095"
