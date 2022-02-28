@@ -21,12 +21,15 @@ const dtsbrokers = async (req, res) => {
             text: "Hello world?",
             html: "<b>Hello world?</b>"
         })
-        console.log("Message sent: %s", info.messageId)
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info))
-        return res.send({message: "success"})
+        // console.log("Message sent: %s", info.messageId)
+        // console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info))
+        return res.json({
+            status: 200,
+            message: "success"
+        })
     } catch (e) {
         console.log(e)
-        return res.status(500).send({message: "error"})
+        return res.status(500).send({message: "Server error"})
     }
 }
 
