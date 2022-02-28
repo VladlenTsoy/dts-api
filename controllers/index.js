@@ -2,20 +2,19 @@ const nodemailer = require("nodemailer")
 
 const dtsbrokers = async (req, res) => {
     try {
-        const email = "vladlengg@gmail.com"
-        let testAccount = await nodemailer.createTestAccount()
+        const email = "vladlen.tsoy@yandex.ru"
         let transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
+            host: "smtp.yandex.ru",
             port: 465,
             secure: true,
             auth: {
                 user: email,
-                pass: "99897Vladlen7816095"
+                pass: "Vlad7816095"
             }
         })
-        let info = await transporter.sendMail({
+        await transporter.sendMail({
             from: `DTS BROKERAGE INC. <${email}>`,
-            to: "vladlen.tsoy@yandex.com",
+            to: "vladlengg@gmail.com",
             subject: "Hello ✔",
             text: "Hello world?",
             html: "<b>Hello world?</b>"
