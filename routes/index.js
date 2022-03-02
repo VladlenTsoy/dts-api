@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const controller = require("../controllers")
 
-router.get("/dtsbrokers", controller.dtsbrokers)
+router.post("/dtsbrokers", controller.dtsbrokers)
+router.post("/dts", controller.dts)
 
 module.exports = router
