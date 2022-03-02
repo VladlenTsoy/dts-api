@@ -75,9 +75,9 @@ const dts = async (req, res) => {
             to: ["vladlengg@gmail.com", "maftuna.i@dtsincorporated.com"],
             subject: "Hello ✔",
             text: `
-                Date of Application: ${data.date_of_application}\n
-                License Number: ${data.license_number}\n
                 Full name: ${data.full_name}\n
+                Mobile Number#: ${data.mobile_number}\n
+                License Number: ${data.license_number}\n
                 License Type: ${data.license_type}\n
                 Current Address: ${data.current_address}\n
                 Do you have the legal right to work in the U.S.?: ${data["1"]}\n
@@ -99,9 +99,9 @@ const dts = async (req, res) => {
                 State Drive License: ${data.state_drive_license}\n
             `,
             html: `
-                    <b>Date of Application:</b> ${data.date_of_application}<br/>
-                    <b>License Number:</b> ${data.license_number}<br/>
                     <b>Full name:</b> ${data.full_name}<br/>
+                    <b>Mobile Number#:</b> ${data.mobile_number}<br/>
+                    <b>License Number:</b> ${data.license_number}<br/>
                     <b>License Type:</b> ${data.license_type}<br/>
                     <b>Current Address:</b> ${data.current_address}<br/>
                     <b>License Expiration Date:</b> ${data.license_expiration_date}<br/>
