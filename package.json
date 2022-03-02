@@ -2,12 +2,12 @@
   "name": "dts-api",
   "version": "0.0.0",
   "private": true,
-  "main": "app.js",
+  "main": "index.js",
   "engines": {
     "node": "14.x"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon index.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

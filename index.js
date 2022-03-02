@@ -3,18 +3,18 @@ const indexRouter = require("./routes/index")
 const helmet = require("helmet")
 const cors = require("cors")
 
-const app = express()
+const index = express()
 const port = process.env.PORT || 8000
 //
-app.use(cors())
-app.use(helmet())
-app.use(express.json({limit: "50mb"}))
-app.use(express.urlencoded({extended: false}))
+index.use(cors())
+index.use(helmet())
+index.use(express.json({limit: "50mb"}))
+index.use(express.urlencoded({extended: false}))
 //
-app.use("/", indexRouter)
+index.use("/", indexRouter)
 //
-app.listen(port, () => {
+index.listen(port, () => {
     console.log(`Server started at http://localhost:${port}`)
 })
 
-module.exports = app
+module.exports = index
