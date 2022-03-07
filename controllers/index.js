@@ -60,15 +60,15 @@ const dtsbrokers = async (req, res) => {
 const dts = async (req, res) => {
     try {
         const data = req.body
-        const email = "vladlen.tsoy@yandex.ru"
+        const email = "operations@dtsbrokers.com"
         let transporter = nodemailer.createTransport({
-            host: "smtp.yandex.ru",
+            host: 'smtp.gmail.com',
             port: 465,
-            // secure: true,
+            secure: true,
             auth: {
                 user: email,
-                pass: "Vlad7816095"
-            }
+                pass: "Operations2022"
+            },
         })
         await transporter.sendMail({
             from: `DTS INC. <${email}>`,
@@ -77,6 +77,7 @@ const dts = async (req, res) => {
             text: `
                 Full name: ${data.full_name}\n
                 Mobile Number#: ${data.mobile_number}\n
+                State Drive License: ${data.state_drive_license}\n
                 License Number: ${data.license_number}\n
                 License Type: ${data.license_type}\n
                 Current Address: ${data.current_address}\n
@@ -89,18 +90,16 @@ const dts = async (req, res) => {
                 Current Employer Address (please include address, city, state, and zip code): ${data.current_employer_address}\n
                 Show special courses or training that will help you as a driver: ${data.special_courses}\n
                 Current Employer Contact Person and Phone Number: ${data.current_employer_contact}\n
-                What other trucking, transportation or other experience do you have?: ${data.other_trucking}\n
                 Accident Record for Past 3 Years or More: ${data.accident_record}\n
                 List special equipment or technical materials you can work with: ${data.special_equipment}\n
                 Traffic Conviction Record for Past 3 Years or More: ${data.traffic_conviction_record}\n
                 Provide Us with Your Vehicle Information: ${data.vehicle_information}\n
-                List any job related classes or programs you completed, and the dates you attended: ${data.job_related_classes}\n
                 Your Email: ${data.your_email}\n
-                State Drive License: ${data.state_drive_license}\n
             `,
             html: `
                     <b>Full name:</b> ${data.full_name}<br/>
                     <b>Mobile Number#:</b> ${data.mobile_number}<br/>
+                    <b>State Drive License:</b> ${data.state_drive_license}<br/>
                     <b>License Number:</b> ${data.license_number}<br/>
                     <b>License Type:</b> ${data.license_type}<br/>
                     <b>Current Address:</b> ${data.current_address}<br/>
@@ -114,14 +113,11 @@ const dts = async (req, res) => {
                     <b>Current Employer Address (please include address, city, state, and zip code):</b> ${data.current_employer_address}<br/>
                     <b>Show special courses or training that will help you as a driver:</b> ${data.special_courses}<br/>
                     <b>Current Employer Contact Person and Phone Number:</b> ${data.current_employer_contact}<br/>
-                    <b>What other trucking, transportation or other experience do you have?:</b> ${data.other_trucking}<br/>
                     <b>Accident Record for Past 3 Years or More:</b> ${data.accident_record}<br/>
                     <b>List special equipment or technical materials you can work with:</b> ${data.special_equipment}<br/>
                     <b>Traffic Conviction Record for Past 3 Years or More:</b> ${data.traffic_conviction_record}<br/>
                     <b>Provide Us with Your Vehicle Information:</b> ${data.vehicle_information}<br/>
-                    <b>List any job related classes or programs you completed, and the dates you attended:</b> ${data.job_related_classes}<br/>
                     <b>Your Email:</b> ${data.your_email}<br/>
-                    <b>State Drive License:</b> ${data.state_drive_license}<br/>
                 `
         })
         return res.json({
