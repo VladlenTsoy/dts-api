@@ -21,7 +21,7 @@ const dtsbrokers = async (req, res) => {
         })
         await transporter.sendMail({
             from: `DTS BROKERAGE INC. <${email}>`,
-            to: "vladlengg@gmail.com",
+            to: ["vladlengg@gmail.com", "operation@dtsbrokers.com"],
             subject: "Hello ✔",
             text: `
                 This message is for: ${data.for_whom}\n
